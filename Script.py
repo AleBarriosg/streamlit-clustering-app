@@ -37,7 +37,7 @@ col1, col2 =st.columns([1,1.2]) # un poco mas ancha la derecha.
 # =============================================
 
 with col1: 
-  st.markdown ("## Estadísticas descriptivas de los datos originales")
+  st.markdown ("## 1. Estadísticas descriptivas de los datos originales")
 
   if os.path.exists(csv_path):
     df = pd.read_csv(csv_path)
@@ -80,7 +80,7 @@ with col1:
 # ===================================================
 
 with col2:
-  st.markdown("## 🧩 Descripción del Proyecto y Motivación")
+  st.markdown("## 2. Descripción del Proyecto y Motivación")
   st.markdown("""
     Este proyecto utiliza un **modelo de clustering K-Means** para analizar datos obtenidos
     desde sensores **FLC (Fluxgate)** que miden la distorsión magnética del terreno.
@@ -114,7 +114,7 @@ with col2:
     - Codificada del **1 al 5**.
 
     ---
-    ### 🎯 Objetivo del Clustering
+    ### Objetivo del Clustering
 
     El propósito del modelo es **identificar grupos naturales** de observaciones
     sin conocer las etiquetas de salida (M).  
@@ -125,7 +125,7 @@ with col2:
     """)
 
   st.markdown("---")
-  st.markdown("## 🤖 Consulta del Modelo de Clustering")
+  st.markdown("## 3. Consulta del Modelo de Clustering")
   st.markdown("""Utilizamos los datos originales para realizar un análisis de clustering, identificando las características que distinguen naturalmente a cada grupo.
                  Posteriormente, guardamos el modelo K-Means entrenado y lo aplicamos a una muestra de datos sintéticos para predecir su clasificación.
                  Los resultados se presentan a continuación.""")
@@ -164,7 +164,7 @@ with col2:
     # =========================================================
     # Apartado: Visualización de los clusters originales
     # =========================================================
-    st.markdown("## 📊 Resultados promedio de los clusters entrenados")
+    st.markdown("## 4. Resultados promedio de los clusters entrenados")
 
     # Datos de ejemplo según estadísticas de los clusters originales
     cluster_means = pd.DataFrame({
