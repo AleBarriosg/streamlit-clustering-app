@@ -42,19 +42,19 @@ with col1:
   if os.path.exists(csv_path):
     df = pd.read_csv(csv_path)
 
-    st.write("### Vista previa:")
+    st.write("### 1.1 Vista previa:")
     st.dataframe(df.head())
 
-    st.write("### Resumen estadístico:")
+    st.write("### 1.2 Resumen estadístico:")
     st.dataframe(df.describe().T)
 
-    st.write("### Distribución por tipo de mina (M):")
+    st.write("### 1.3 Distribución por tipo de mina (M):")
     st.bar_chart(df['M'].value_counts().sort_index())
     
     # -------------------------------
     # 6. Mapa de correlaciones entre variables
     # -------------------------------
-    st.write("### Mapa de correlaciones entre variables")
+    st.write("### 1.4 Mapa de correlaciones entre variables")
     num_col = df.select_dtypes(include=np.number).columns.tolist()
     plt.figure(figsize=(12, 6))
     sns.heatmap(df[num_col].corr(), annot=True, vmin=-1, vmax=1, fmt=".2f", cmap="Spectral")
@@ -66,7 +66,7 @@ with col1:
     # -------------------------------
     # 7. Pairplot: relaciones entre variables y tipos de minas
     # -------------------------------
-    st.write("### Relaciones entre variables y clases (Pairplot)")
+    st.write("### 1.5 Relaciones entre variables y clases (Pairplot)")
     pairplot_fig = sns.pairplot(df, hue="M", diag_kind="kde", plot_kws={"alpha":0.5})
     pairplot_fig.fig.suptitle("Relaciones entre variables y clases", y=1.02)
     st.pyplot(pairplot_fig)  # Renderiza el pairplot en Streamlit
@@ -87,7 +87,7 @@ with col2:
     El propósito es **agrupar las observaciones** según sus características físicas y del suelo,
     permitiendo detectar patrones ocultos que podrían estar asociados a distintos **tipos de minas**.
 
-    ### Atributos de los datos 
+    ### 2.1 Atributos de los datos 
 
     **Voltage (V):**  
     - Rango original: [0 V, 10.6 V]  
@@ -114,7 +114,7 @@ with col2:
     - Codificada del **1 al 5**.
 
     ---
-    ### Objetivo del Clustering
+    ### 2.2 Objetivo del Clustering
 
     El propósito del modelo es **identificar grupos naturales** de observaciones
     sin conocer las etiquetas de salida (M).  
@@ -146,10 +146,10 @@ with col2:
     #Predicción de clusters 
     df['Cluster_pred'] = kmeans.predict(X_scaled) + 1
 
-    st.write("### Clusters asignados por el modelo:")
+    st.write("### 3.1 Clusters asignados por el modelo:")
     st.dataframe(df[['V', 'H', 'S', 'Cluster_pred']].head(10))
 
-    st.write("### Distribución de Clusters:")
+    st.write("### 3.2 Distribución de Clusters:")
     st.bar_chart(df['Cluster_pred'].value_counts().sort_index())
 
     #Botón para descargar resultados 
