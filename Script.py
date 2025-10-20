@@ -267,9 +267,9 @@ with col2:
     
     st.image(img1, caption="Ejemplos de tipos de minas terrestres", use_container_width=True)
     st.image(img2, caption="Mina anti-tanque en terreno árido", use_container_width=True)
-    st.image(img3, caption=" ", use_container_width=True)
-    st.image(img4, caption=" ", use_container_width=True)
-    st.image(img5, caption=" ", use_container_width=True)
+    st.image(img3, caption="Mina anti-personnel", use_container_width=True)
+    st.image(img4, caption="Mina M14 anti-personnel", use_container_width=True)
+    st.image(img5, caption="Trampa explosiva anti-personnel", use_container_width=True)
 
   else:
     st.warning("⚠️ No se encontraron los archivos del modelo o los datos.")
