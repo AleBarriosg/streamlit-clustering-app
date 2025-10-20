@@ -1,0 +1,7 @@
+[theme]
+base="light"
+primaryColor="#4E944F"  # Verde militar
+backgroundColor="#F5F5F5"
+secondaryBackgroundColor="#E0E0E0"
+textColor="#1E1E1E"
+font="sans serif"
