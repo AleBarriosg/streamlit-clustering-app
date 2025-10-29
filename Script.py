@@ -78,7 +78,7 @@ with col1:
     st.markdown ("## 2. Estadísticas descriptivas de los datos originales")
     
     if os.path.exists(csv_path):
-        df = pd.read_csv(csv_path)
+        df = pd.read_csv(datos_originales)
 
         st.write("### 2.1 Vista previa:")
         st.dataframe(df.head())
@@ -259,6 +259,7 @@ with col2:
                 de artefactos explosivos detectados mediante sensores magnéticos FLC.  
                 El objetivo del modelo de clasificación es identificar correctamente el tipo de mina a partir de las mediciones del sensor y
                 las condiciones del suelo.""")
+                
     img1 = Image.open("Foto_minas.jpeg")
     img2 = Image.open("Foto1.jpeg")
     img3 = Image.open("Foto2.jpeg")
