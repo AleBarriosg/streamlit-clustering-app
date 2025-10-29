@@ -160,7 +160,7 @@ with col1:
         data = pd.read_csv(data_cluster)
         st.markdown(" ### 3.1 Caracterizando cada Cluster")
 
-        # Calcular estadísticas por cluster
+        # Calcular estadísticas por cluster 
         cluster_stats = data.groupby('Cluster').agg({
             'V': ['mean', 'median', 'std', 'min', 'max'],
             'H': ['mean', 'median', 'std', 'min', 'max'],
