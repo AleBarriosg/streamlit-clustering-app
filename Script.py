@@ -21,7 +21,7 @@ st.set_page_config(page_title="Clustering de Sensores", layout="wide")
 model_path = "kmeans_model.pkl"
 csv_path = "synthetic_data.csv"
 scaler_path = "scaler.pkl"
-datos_originales = "Mine_Dataset_2.csv"
+datos_originales = "Mine_Dataset_2.xlsx"
 data_cluster = "datos_cluster.csv"
 #output_dir_data = "/content/"
 
@@ -78,7 +78,7 @@ with col1:
     st.markdown ("## 2. Estadísticas descriptivas de los datos originales")
     
     if os.path.exists(csv_path):
-        df = pd.read_csv(datos_originales)
+        df = pd.read_excel(datos_originales)
 
         st.write("### 2.1 Vista previa:")
         st.dataframe(df.head())
